@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Play } from '../../models/play';
 import { Ship } from '../../models/ship';
 import { RootState } from '../../store';
-import { randomIntFromInterval } from '../../utils/cpu.utils';
+import { posibleShipCoordinate, randomIntFromInterval } from '../../utils/cpu.utils';
 import { BattlefieldUI } from '../battlefield/battlefield';
 import { GameInfo } from '../game-info/game-info';
 import './game-screen.scss';
@@ -39,10 +39,12 @@ export const GameScreen = ({onEndGame, onSurrender}: GameScreenInterface) => {
         handleRoundStart();
         if (rootState.game.actualTurn === 'CPU') {
             setTimeout(() => {                
-                const x = randomIntFromInterval(0, 9);
-                const y = randomIntFromInterval(0, 9); 
-    
-                if ( rootState.user.battlefield.battlefield.hasShipInXY(x, y)) {
+                
+                const possibleHit = posibleShipCoordinate(rootState.game.history);
+                const x = possibleHit[0];
+                const y = possibleHit[1];
+
+                if ( rootState.user.battlefield.battlefield.hasShipInXY(possibleHit?.[0] || x, possibleHit?.[1] || y)) {
                     const ship: Ship = rootState.user.battlefield.battlefield.getShipInXY(x, y);
                     const idx: number = ship.getShipIndexFromCoordinates(x, y);
                     ship.hitShipPosition(idx);
