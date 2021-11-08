@@ -44,7 +44,7 @@ export const GameScreen = ({onEndGame, onSurrender}: GameScreenInterface) => {
                 const x = possibleHit[0];
                 const y = possibleHit[1];
 
-                if ( rootState.user.battlefield.battlefield.hasShipInXY(possibleHit?.[0] || x, possibleHit?.[1] || y)) {
+                if ( rootState.user.battlefield.battlefield.hasShipInXY(x, y)) {
                     const ship: Ship = rootState.user.battlefield.battlefield.getShipInXY(x, y);
                     const idx: number = ship.getShipIndexFromCoordinates(x, y);
                     ship.hitShipPosition(idx);

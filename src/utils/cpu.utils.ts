@@ -46,13 +46,23 @@ export const posibleShipCoordinate = (lastPlays: Play[]): number[] => {
 
     const possiblesNextPlays = [
         [ lastHitPlay.position[0], lastHitPlay.position[1] + 1 ],
+        [ lastHitPlay.position[0], lastHitPlay.position[1] + 2 ],
+        [ lastHitPlay.position[0], lastHitPlay.position[1] + 3 ],
         [ lastHitPlay.position[0], lastHitPlay.position[1] - 1 ],
+        [ lastHitPlay.position[0], lastHitPlay.position[1] - 2 ],
+        [ lastHitPlay.position[0], lastHitPlay.position[1] - 3 ],
         [ lastHitPlay.position[0] + 1, lastHitPlay.position[1] ],
-        [ lastHitPlay.position[0] - 1, lastHitPlay.position[1] ]
+        [ lastHitPlay.position[0] + 2, lastHitPlay.position[1] ],
+        [ lastHitPlay.position[0] + 3, lastHitPlay.position[1] ],
+        [ lastHitPlay.position[0] - 1, lastHitPlay.position[1] ],
+        [ lastHitPlay.position[0] - 2, lastHitPlay.position[1] ],
+        [ lastHitPlay.position[0] - 3, lastHitPlay.position[1] ],
     ];
 
 
-    const nextPlays = possiblesNextPlays.filter(nextPlay => !cpuPlays.find(p => p.position[0] === nextPlay[0] && p.position[1] === nextPlay[1]));
+    const nextPlays = possiblesNextPlays
+                    .filter(nextPlay => !cpuPlays.find(p => p.position[0] === nextPlay[0] && p.position[1] === nextPlay[1]))
+                    .filter(validPlay => validPlay[0] >= 0 && validPlay[0] <= 9 && validPlay[1] >= 0 && validPlay[1] <= 9);
 
     if (nextPlays && nextPlays.length > 0) {
         const playsLength = nextPlays.length;

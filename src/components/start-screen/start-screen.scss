@@ -25,10 +25,14 @@
         border: solid 1px #ccc;
         border-radius: 15px;
 
-        @media (min-width: 678px) {
+        @media (min-width: 807px) {
             flex-direction: row;
             align-items: center;
+            .right {
+                width: 45%;
+            }
         }
+
         
         .name-input {
             padding-top: 20px;
