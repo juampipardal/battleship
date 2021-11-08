@@ -1,0 +1,64 @@
+.Start-screen {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .welcome-wrapper {
+        width: 100%;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        max-width: 900px;
+        width: 100%;
+        padding: 20px;
+        background-color: white;
+        border: solid 1px #ccc;
+        border-radius: 15px;
+
+        @media (min-width: 678px) {
+            flex-direction: row;
+            align-items: center;
+        }
+        
+        .name-input {
+            padding-top: 20px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            input {
+                box-sizing: border-box;
+                display: block;
+                width: 100%;
+                border: 3px solid gray;
+                padding: 8px;
+                color: currentColor;
+                background: transparent;
+                border-radius: 8px;
+            }
+        }
+        
+        .start-button-container {
+            padding-top: 20px;
+            button {
+                border: 3px solid #938c8c;
+                border-radius: 0.25rem;
+                font-size: 16px;
+                color: #938c8c;
+                background-color: white;
+                padding: 12px;
+                cursor: pointer;
+            }
+        }
+    }
+}

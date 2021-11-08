@@ -1,5 +1,26 @@
 .cell {
-    height: 40px;
-    width: 40px;
+    height: 25px;
+    width: 25px;
+
+    @media (min-width: 500px) {
+        height: 40px;
+        width: 40px;    
+    }
+
+    &.-green-background {
+        background-color: #67ab9f;
+    }
+
+    &.-orange-background {
+        background-color: #ffb570;
+    }
     
+    &.-red-background {
+        background-color: #ea6b66;
+    }
+
+    &.-light-blue-background {
+        background-color: #4b86b4;
+    }
+
 }

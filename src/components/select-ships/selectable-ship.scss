@@ -1,0 +1,84 @@
+.ship {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+    padding: 12px 8px;
+    border: solid 2px gray;
+    border-radius: 15px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+
+    @media (min-width: 1024px) {
+        padding: 20px;
+        margin-top: 0;
+    }
+
+    &.-is-selected {
+        border: solid 3px #67ab9f;
+    }
+
+    .left-side {
+        display: flex;
+        flex-direction: column;
+
+        .ship-name {
+            text-transform: capitalize;
+            font-size: 16px;
+            font-weight: 550;
+        }
+
+        .parts-container {
+            display: flex;
+            .part {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                background-color: #67ab9f;
+                width: 30px;
+                height: 30px; 
+                border: solid 1px #ccc;
+            }
+        }
+    }
+    .right-side {
+        margin-top: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 75px;
+
+        @media (min-width: 1024px) {
+            padding-left: 20px;
+        }
+
+        
+
+        .-pr {
+            padding-right: 8px;
+        }
+
+        .-pl {
+            padding-left: 8px;
+        }
+
+        .text-bold {
+            font-weight: 550;
+        }
+
+        .direction {
+            display: flex;
+            flex-wrap: wrap;
+            
+            @media (min-width: 1024px) {
+                align-items: center;                
+            }
+        }
+
+        .sense {
+            display: flex;
+            align-items: center;
+        }
+    }
+}

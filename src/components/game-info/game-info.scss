@@ -1,0 +1,35 @@
+.game-info-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    max-height: 500px;
+    overflow-y: scroll;
+
+    .is-playing {
+        font-size: 20px;
+    }
+    .player {
+        color: #67ab9f;
+        font-weight: 600;
+    }
+
+    .play-message-container {
+        margin-top: 10px;
+        padding: 10px;
+        border: solid 1px #ccc;
+        border-radius: 8px;
+        color: white;
+
+        &.-orange-text {
+            background-color: #ffb570;
+        }
+        
+        &.-red-text {
+            background-color: red;
+        }
+    
+        &.-light-blue-text {
+            background-color: #4b86b4;
+        }
+    }
+}
