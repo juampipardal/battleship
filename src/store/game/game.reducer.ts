@@ -15,7 +15,7 @@ const initialState: GameState = {
     winner: null
 };
 
-export const gameReducer = (state: GameState = initialState, action: {type: string, payload: any}): GameState => {
+export const gameReducer = (state: GameState = initialState, action: {type: string, payload?: any}): GameState => {
   switch (action.type) {
     case `addPlay`:
       return {

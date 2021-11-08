@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './App.scss';
 import { EndScreen } from './components/end-screen/end-screen';
 import { GameScreen } from './components/game-screen/game-screen';
 import { StartScreen } from './components/start-screen/start-screen';
 import { ViewsInterface } from './models/views.interface';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
 import { store } from './store';
 
 

@@ -25,7 +25,7 @@ export class Ship {
 
 
     public getShipVector(): [number, number][] {
-        let vector: [number, number][] = new Array();
+        let vector: [number, number][] = [];
 
         if (this.direction === 'horizontal') {
 

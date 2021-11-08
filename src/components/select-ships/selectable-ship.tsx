@@ -45,6 +45,7 @@ export const SelectableShip = ({name, size, availableQuantity}: SelectShipInterf
             didMountRef.current = true;
         }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [directionHorizontal, sensePositive]);
 
     return (

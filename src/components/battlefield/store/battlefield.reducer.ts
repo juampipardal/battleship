@@ -1,4 +1,3 @@
-import { createSlice, current, PayloadAction } from '@reduxjs/toolkit'
 import { Battlefield } from '../../../models/battlefield';
 import { Ship } from '../../../models/ship';
 
@@ -17,7 +16,7 @@ export const battlefieldInitialState: BattlefieldState = {
 
 
 export function createBattlefieldReducer(name: string, customInitialState?: Function) {
-  return  (state: BattlefieldState = customInitialState ? customInitialState() : battlefieldInitialState, action: {type: string, payload: any}): BattlefieldState => {
+  return  (state: BattlefieldState = customInitialState ? customInitialState() : battlefieldInitialState, action: {type: string, payload?: any}): BattlefieldState => {
     switch (action.type) {
       case `${name}_addShip`: {
         const ships = [...state.battlefield.ships, action.payload];

@@ -1,4 +1,4 @@
-import { combineReducers, configureStore, createStore } from '@reduxjs/toolkit';
+import { combineReducers, createStore } from '@reduxjs/toolkit';
 import CPUReducer from './cpu/cpu.reducer';
 import userReducer from './user/user.reducer';
 import { gameReducer } from './game/game.reducer';

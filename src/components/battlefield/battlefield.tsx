@@ -1,11 +1,8 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { Battlefield } from '../../models/battlefield';
+import { useDispatch } from 'react-redux';
 import { Ship } from '../../models/ship';
-import { RootState } from '../../store';
 import { Cell } from '../cell/cell';
 import { BattlefieldState } from "./store/battlefield.reducer";
 import './Battlefield.scss';
-import { useEffect } from 'react';
 import { Play } from '../../models/play';
 
 

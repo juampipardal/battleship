@@ -1,6 +1,6 @@
 import { BattlefieldState, battlefieldInitialState } from "../components/battlefield/store/battlefield.reducer";
 import { Battlefield } from "../models/battlefield";
-import { Ship, ShipType } from "../models/ship";
+import { ShipType } from "../models/ship";
 import { gameConfig } from '../config/game.config';
 import { Play } from "../models/play";
 
@@ -11,7 +11,7 @@ export const generateRandomBattelfieldState = (): BattlefieldState => {
     const battlefield = new Battlefield([], battlefieldInitialState.battlefield.dimensions);
     gameConfig.ships.forEach((ship) => {
         new Array(ship.quantity).fill('').forEach(sh => {
-            const randomShip = battlefield.generateRandomShip(<ShipType> ship.name, ship.size);
+            const randomShip = battlefield.generateRandomShip(ship.name as ShipType, ship.size);
             battlefield.addShip(randomShip);
         });
     });
@@ -35,6 +35,7 @@ export const posibleShipCoordinate = (lastPlays: Play[]): number[] => {
 
     do {
         randomCoordinates = [randomIntFromInterval(0, 9), randomIntFromInterval(0, 9)];
+    // eslint-disable-next-line no-loop-func
     }   while(cpuPlays.find(play => play.position[0] === randomCoordinates[0] && play.position[1] === randomCoordinates[1]));
 
     const cpuHitPlays = cpuPlays.filter(play => play.hit && !play.destroyed);

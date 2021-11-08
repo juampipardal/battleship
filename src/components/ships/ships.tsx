@@ -3,11 +3,11 @@ import { SelectableShip } from '../select-ships/selectable-ship';
 import './ships.scss';
 
 
-interface ShipsUI {
+interface ShipsInterface {
     ships: Ship[];
 }
 
-export const ShipsUI = ({ships}: ShipsUI) => {
+export const ShipsUI = ({ships}: ShipsInterface) => {
 
     return (
         <div className="ships-container">

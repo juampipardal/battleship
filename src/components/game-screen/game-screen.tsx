@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Play } from '../../models/play';
 import { Ship } from '../../models/ship';
 import { RootState } from '../../store';
-import { posibleShipCoordinate, randomIntFromInterval } from '../../utils/cpu.utils';
+import { posibleShipCoordinate } from '../../utils/cpu.utils';
 import { BattlefieldUI } from '../battlefield/battlefield';
 import { GameInfo } from '../game-info/game-info';
 import './game-screen.scss';
@@ -57,6 +57,7 @@ export const GameScreen = ({onEndGame, onSurrender}: GameScreenInterface) => {
                 dispatch({type: 'setNextTurn', payload: 'user'});
             }, 500);
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [rootState.game.actualTurn]);
 
     return (
